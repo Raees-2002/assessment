@@ -1,3 +1,5 @@
+import js from "@eslint/js";
+
 const express = require("express");
 const app = express();
 

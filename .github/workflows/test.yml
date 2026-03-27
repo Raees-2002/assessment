@@ -54,8 +54,8 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
-        script: |
-          docker pull ${{ secrets.DOCKER_USERNAME }}/assessment:test
-          docker stop assessment || true
-          docker rm assessment || true
-          docker run -d -p 3000:3000 --name assessment ${{ secrets.DOCKER_USERNAME }}/assessment:test
+          script: |
+            docker pull ${{ secrets.DOCKER_USERNAME }}/assessment:test
+            docker stop assessment || true
+            docker rm assessment || true
+            docker run -d -p 3000:3000 --name assessment ${{ secrets.DOCKER_USERNAME }}/assessment:test

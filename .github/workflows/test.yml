@@ -58,6 +58,7 @@ jobs:
             docker system prune -a -f || true
             docker pull rafeel124/assessment:test
             docker pull rafeel124/assessment:test
+            docker rm -f assessment || true
             docker ps -q --filter "publish=3000" | xargs -r docker stop
             docker ps -a -q --filter "publish=3000" | xargs -r docker rm
             docker run -d -p 3000:3000 --name assessment rafeel124/assessment:test

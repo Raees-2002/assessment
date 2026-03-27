@@ -56,7 +56,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
           
-            docker pull <your-username>/assessment:test
+            docker pull rafeel124/assessment:test
             docker ps -q --filter "publish=3000" | xargs -r docker stop
             docker ps -a -q --filter "publish=3000" | xargs -r docker rm
             docker run -d -p 3000:3000 --name assessment rafeel124/assessment:test

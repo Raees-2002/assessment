@@ -26,3 +26,12 @@ jobs:
 
       - name: Run lint
         run: npx eslint .
+
+      - name : Run npm audit
+        run: npm audit --audit-level=high
+
+      - name : Run Trivy scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "fs"
+          severity: "HIGH,CRITICAL"

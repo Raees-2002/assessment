@@ -59,3 +59,10 @@ jobs:
             docker stop assessment || true
             docker rm assessment || true
             docker run -d -p 3000:3000 --name assessment ${{ secrets.DOCKER_USERNAME }}/assessment:test
+
+      - name: Notify Slack
+        if: always()
+        run: |
+         curl -X POST -H 'Content-type: application/json' \
+         --data '{"text":"Pipeline finished"}' \
+         ${{ secrets.SLACK_WEBHOOK }}

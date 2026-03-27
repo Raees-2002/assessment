@@ -284,4 +284,6 @@ http://localhost:3000
 
 
 
-This project demonstrates a complete CI/CD pipeline aligned with modern DevOps practices. It ensures reliable, secure, and automated application delivery with minimal downtime and strong operational efficiency.
+
+
+
